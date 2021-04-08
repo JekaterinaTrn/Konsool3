@@ -20,36 +20,38 @@ using System; // video 14
     }
     
 
+
 using System;
 
-
+{
     class Program
     {
-        static void Main(string[] args)    
+        static void Main(string[] args)
         {
             string UserChoice = string.Empty;    // muutuv UserChoise, mis pole arv ja string tagastab tühja rida
             do                                   // teeb nii kaua kui while tingimus sobib
             {
                 Console.WriteLine("Please enter your target?");
-                int UserTarget = int.Parse(Console.ReadLine());
+                int UserTarget = int.Parse(Console.ReadLine());    // teeb usertargetit täisnumbriks
 
                 int Start = 0;
 
                 while (Start <= UserTarget)
                 {
-                    Console.Write(Start + " ");
-                    Start = Start + 2;
+                    Console.Write(Start + " ");         // teeb summa algnubriga
+                    Start = Start + 2;                  // liidab 2
                 }
-                do
+                do                                      // kui liitmine tehtud siis edasi ta teeb ...
                 {
                     Console.WriteLine("Do you want to continue - Yes or No?");
 
                     UserChoice = Console.ReadLine().ToUpper(); // ToUpper pöördub teksti suurteks täheks
-                    if (UserChoice != "YES" && UserChoice != "NO")
+                    if (UserChoice != "YES" && UserChoice != "NO")  // kui valik ei ole nii Yes kui ka No ... 
                     {
-                        Console.WriteLine("Invalid Choice, please say Yes or No");
+                        Console.WriteLine("Invalid Choice, please say Yes or No"); // siis ta kirjutab seda
                     }
                 } while (UserChoice != "YES" && UserChoice != "NO");
             } while (UserChoice == "YES");
         }
     }
+}
