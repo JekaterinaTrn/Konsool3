@@ -29,146 +29,45 @@
     }
 }
 
+---------------------------------------------------------------------------------------------------
 
-class Program
-{
-    static void Main()
-    {
-      for(int i=1; i<= 20; i++)
-        {
-            Console.WriteLine(i);
-
-            if (i == 10)
-                break; 
-        }
-    }
-}
-
-class Program
-{
-    static void Main()
-    {
-      for(int i = 0; i <= 20; i++)
-        {
-            if (i % 2 == 1)
-                continue;
-
-            Console.WriteLine(i);
-        }
-    }
-}
+using System;
 
 
-class Program  // video 16
-{
-    public static void Main()
-    {
-        Program.EvenNumbers();
-     
-    }
 
-    public static void EvenNumbers()
-    {
-        int Start = 0;
-
-        while(Start <= 20)
-        {
-            Console.WriteLine(Start);
-            Start = Start + 2;
-        }
-    }
-    } 
-    
-    
-class Program  
-{
-    public static void Main()
-    {
-        Program.EvenNumbers(30);         
-
-        Program P = new Program();
-        int Sum = P.Add(10, 20);
-
-        Console.WriteLine("Sum = {0}", Sum);
-    }
-    public int Add(int FN, int SN)
-    {
-        return FN + SN;
-    }
-
-
-    public static void EvenNumbers(int Target)
-    {
-        int Start = 0;
-
-        while(Start <= Target)
-        {
-            Console.WriteLine(Start);
-            Start = Start + 2;
-        }
-    }
-    }
-    
-    class Program  // video 17
-{
-    public static void Main()
-    {
-        int i = 0;            // initialized to zero 
-
-        SimpleMethod(ref i);      // i is 0 now youre passing i to the simple method // receive value into variable called J then its changing that value to 101
-
-        Console.WriteLine(i);  // want to see what the value of i 
-    }
-                                                 // i and j are pointing to the same memory location
-    public static void SimpleMethod(ref int j)   // i is copied into variable j
-    {
-        j = 101;
-    }
-    }
-    
     class Program
-{
-    public static void Main()
     {
-        int Total = 0;
-        int Product = 0;
-        Calculate(10, 20, out Total, out Product);
+        static void Main(string[] args)
+        {
 
-        Console.WriteLine("Sum = {0} && Product = {1}", Total, Product);
-    }
-    public static void Calculate(int FN, int SN, out int Sum, out int Product) // add two numbers and put the sum in parameters Sum, will multiply two numbers and put the product
-    { 
-    Sum = FN + SN;    //  expects two parameters to be passed in summing up those two entertaining than back
-        Product = FN * SN;
-    }
-}
+        
+            for (int i = 1; i <= 20; i++)    // alustab arvutada 1st  ,  i tähendab "ütle mulle i väärtus ja seejärel suurenda
+        {
+                Console.WriteLine(i);
 
+                if (i == 10)         // kui jõuab 10ni siis peatub
+                    break;
+            }
+        }
+    }
+    
+ --------------------------------------------------------------------------------------------------   
 
 
 class Program
 {
-    public static void Main()
+    static void Main()
     {
-        int[] Numbers = new int[3];
-
-        Numbers[0] = 101;
-        Numbers[1] = 102;
-        Numbers[2] = 103;
-
-        //ParamsMethod();
-        ParamsMethod(Numbers);
-
-    }
-    public static void ParamsMethod(params int[] Numbers)  // find out the total numbers of elements in this collection
-    {
-        Console.WriteLine("There are {0} elements", Numbers.Length);
-    
-        foreach (int i in Numbers)
+        for (int i = 0; i <= 20; i++)    // alustab arvestama 0st. Niikaua kui tingimusväljend on tõene, jookseb silmus. Sel juhul kestab silmus seni, kuni loendur i jõuab 20-ni. i++ suurendab ühe võrra.
         {
+            if (i % 2 == 1)   // see funktsioon kontrollib, kas on paaritu number. Kui on paaritu siis programm jätkab kui mitte siis peatub.
+                continue;     //   kui on vaja, et programm kirjutaks nii paaritu kui kak paaris on vaja CONTINUE
+
             Console.WriteLine(i);
         }
     }
-
-
 }
+}
+
+
 
