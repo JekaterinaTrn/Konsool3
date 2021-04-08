@@ -1,0 +1,64 @@
+    class Program  // video 17
+{
+    public static void Main()
+    {
+        int i = 0;            // initialized to zero 
+
+        SimpleMethod(ref i);      // i is 0 now youre passing i to the simple method // receive value into variable called J then its changing that value to 101
+
+        Console.WriteLine(i);  // want to see what the value of i 
+    }
+                                                 // i and j are pointing to the same memory location
+    public static void SimpleMethod(ref int j)   // i is copied into variable j
+    {
+        j = 101;
+    }
+    }
+    
+    class Program
+{
+    public static void Main()
+    {
+        int Total = 0;
+        int Product = 0;
+        Calculate(10, 20, out Total, out Product);
+
+        Console.WriteLine("Sum = {0} && Product = {1}", Total, Product);
+    }
+    public static void Calculate(int FN, int SN, out int Sum, out int Product) // add two numbers and put the sum in parameters Sum, will multiply two numbers and put the product
+    { 
+    Sum = FN + SN;    //  expects two parameters to be passed in summing up those two entertaining than back
+        Product = FN * SN;
+    }
+}
+
+
+
+class Program
+{
+    public static void Main()
+    {
+        int[] Numbers = new int[3];
+
+        Numbers[0] = 101;
+        Numbers[1] = 102;
+        Numbers[2] = 103;
+
+        //ParamsMethod();
+        ParamsMethod(Numbers);
+
+    }
+    public static void ParamsMethod(params int[] Numbers)  // find out the total numbers of elements in this collection
+    {
+        Console.WriteLine("There are {0} elements", Numbers.Length);
+    
+        foreach (int i in Numbers)
+        {
+            Console.WriteLine(i);
+        }
+    }
+
+
+}
+
+
