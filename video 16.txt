@@ -1,23 +1,24 @@
+
 class Program  // video 16
 {
     public static void Main()
     {
+
         Program.EvenNumbers();
-     
+
     }
 
     public static void EvenNumbers()
     {
-        int Start = 0;
+        int Start = 0;    // alustab arvutada 0st
 
-        while(Start <= 20)
+        while (Start <= 20)   // arvutab kuni 20
         {
-            Console.WriteLine(Start);
-            Start = Start + 2;
+            Console.WriteLine(Start);     
+            Start = Start + 2;     // iga numbrile liidab 2
         }
     }
-    } 
-    
+}
     
 class Program  
 {
