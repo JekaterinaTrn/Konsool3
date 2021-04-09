@@ -1,0 +1,46 @@
+using System;
+
+
+using System;
+
+namespace RefVsOut
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int first = 1;
+            int second = 2;
+
+            Method1(out first, out second);
+            Method2(first, ref second);
+            Method3(ref first, second);
+
+            Console.WriteLine($"first: {first}, second: {second}");
+            Console.ReadLine();
+
+        }
+
+        static void Method1(out int a, out int b) //  selles meetodis a annab edasi ja b tagastab
+        {
+            a = 2;    //  siin 1 muutub 2ks
+            b = 1;    //  siin 2 muutub 1ks
+        }
+
+        static void Method2(int a, ref int b)  // a võtab need andmed,mida ma annan b siin jääb samaks
+        {
+            a *= 5;    // 1*5   aga siin uued parametrit ei salvesta ja jääb 2 
+            b *= a;    // b*a==2*5=10 siin ta jääbki kümmneks 
+        }
+
+        static void Method3(ref int a, int b)  // siin on vastupidi a jääb samaks ja b võtab andmeid, mida mina annan
+        {
+            a *= 5;        // siin a muutub 10ks ja jääb niimodui
+            b *= b;        // eelmisest meetodist 10 tuleb siia ja ei muutu paraametrit 
+        }
+    }
+}
+
+
+
+
